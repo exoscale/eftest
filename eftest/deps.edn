@@ -1,0 +1,20 @@
+{:exoscale.project/lib com.exoscale/eftest
+ :exoscale.project/version-file "VERSION"
+ :exoscale.project/deploy? true
+ :slipset.deps-deploy/exec-args {:installer :remote
+                                 :sign-releases? false
+                                 :repository "clojars"}
+
+ :paths ["src" "resources"]
+
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/tools.namespace {:mvn/version "1.3.0"}
+        progrock/progrock {:mvn/version "0.1.2"}
+        io.aviso/pretty {:mvn/version "1.3"}
+        mvxcvi/puget {:mvn/version "1.3.2"}
+        org.clojure/tools.logging {:mvn/version "1.2.4"}}
+
+ :aliases
+ {:project {:deps {io.github.exoscale/tools.project {:git/sha "5f24196ebea4dc6e601d201d97b463ea26923c7e"}}
+            :ns-default exoscale.tools.project
+            :jvm-opts ["-Dclojure.main.report=stderr"]}}}
